@@ -1,0 +1,15 @@
+{
+    "name": "georgemoucht/company-managment-system",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "GeorgeMoucht",
+            "email": "giorgosmoucht@gmail.com"
+        }
+    ],
+    "require": {}
+}
