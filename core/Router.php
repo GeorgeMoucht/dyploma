@@ -45,10 +45,26 @@ Class Router
               * if callback is false it means that there isn't any $path (url
               * that match with initialization of index.php
             */
-            echo 'Page not found.';
-            exit;
+            return 'Page not found.';
         }
-        echo call_user_func($callback);
+
+        if(is_string($callback)) {
+            return $this->renderView($callback);
+        }
+        return call_user_func($callback);
+    }
+
+    // Render the view. The "callback" is given from index.php mapping.
+    public function renderView($view)
+    {
+        $layoutContent = $this->layoutContent();
+        include_once __DIR__."/../views/$view.php";
+    }
+
+    // Load layout based on given view that user asked to be rendered.
+    protected function layoutContent()
+    {
+
     }
 }
 

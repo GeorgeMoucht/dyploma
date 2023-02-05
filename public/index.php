@@ -1,7 +1,7 @@
 <?php
 
 // Include autoload to use composer.
-require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 use app\core\Application;
 
@@ -13,14 +13,10 @@ $app = new Application();   // Initialize application
 // Mapping all the allowed paths to the application.
 
 // Main Page
-$app->router->get('/', function(){
-    return 'Hello World';
-});
+$app->router->get('/', 'home');
 
 // Contact Page
-$app->router->get('/contact', function(){
-    return 'Contact';
-});
+$app->router->get('/contact', 'contact');
 
 // Start the application.
 $app->run();
