@@ -8,7 +8,8 @@ use app\core\Application;
 // Echo errors messages.
 ini_set('display_errors', 1); error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);    
 
-$app = new Application();   // Initialize application
+
+$app = new Application(dirname(__DIR__));   // Initialize application.
 
 // Mapping all the allowed paths to the application.
 

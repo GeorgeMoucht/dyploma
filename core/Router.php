@@ -58,13 +58,26 @@ Class Router
     public function renderView($view)
     {
         $layoutContent = $this->layoutContent();
-        include_once __DIR__."/../views/$view.php";
+        $viewContent = $this->renderOnlyView($view);
+
+        return str_replace('{{content}}' , $viewContent , $layoutContent);
     }
 
     // Load layout based on given view that user asked to be rendered.
+    // We need to read layout as a string and replace {{contact}}
+    // with the requested view. Then echo it to the browser.
     protected function layoutContent()
     {
+        ob_start(); // Caching the output of the browser.
+        include_once Application::$ROOT_DIR."/views/layouts/main.php";
+        return ob_get_clean(); // Stop caching and start returning to the browser.
+    }
 
+    protected function renderOnlyView($view)
+    {
+        ob_start(); // Caching the ouptut of the browser.
+        include_once Application::$ROOT_DIR."/views/$view.php";
+        return ob_get_clean(); // Stop caching and start returning to the browser.
     }
 }
 

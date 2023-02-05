@@ -16,11 +16,13 @@ use app\core\Request;
 
 Class Application
 {
+    public static string $ROOT_DIR; // This variable is used to store the root path of the hole application.
     public Router $router;
     public Request $request;
 
-    public function __construct()
+    public function __construct($rootPath)
     {
+        self::$ROOT_DIR = $rootPath;
         $this->request = new Request();
         $this->router = new Router($this->request);
     }
