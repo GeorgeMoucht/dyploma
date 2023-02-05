@@ -45,6 +45,7 @@ Class Router
               * if callback is false it means that there isn't any $path (url
               * that match with initialization of index.php
             */
+            Application::$app->response->setStatusCode(404);
             return 'Page not found.';
         }
 
