@@ -2,6 +2,7 @@
 
 namespace app\core;
 use app\core\Request;
+use app\core\Response;
 
 /**
  * Class Router
@@ -15,18 +16,25 @@ use app\core\Request;
 Class Router
 {
     public Request $request;
+    public Response $response;
     protected array $routes = [];
 
 
-    public function __construct(Request $request)
+    public function __construct(Request $request , Response $response)
     {
         $this->request = $request;
+        $this->response = $response;
     }
 
     // Mainly used for mapping every route in our index.php.
     public function get($path,$callback)
     {
         $this->routes['get'][$path] = $callback;
+    }
+
+    public function post($path,$callback)
+    {
+        $this->routes['post'][$path] = $callback;
     }
 
     // Resolve the given URL path
@@ -45,22 +53,34 @@ Class Router
               * if callback is false it means that there isn't any $path (url
               * that match with initialization of index.php
             */
-            // Application::$app->response->setStatusCode(404);
+            $this->response->setStatusCode(404);
             return $this->renderView("_404");
-            return 'Page not found.';
         }
 
         if(is_string($callback)) {
             return $this->renderView($callback);
         }
+
+        if(is_array($callback)) {
+            /**
+             * Initialize the callback as an object.
+             * In our case if we see index.php we use the SiteController object.
+             */
+            $callback[0] = new $callback[0]();
+        }
+
+        echo '<pre>';
+        var_dump($callback);
+        echo '</pre>';
+
         return call_user_func($callback);
     }
 
     // Render the view. The "callback" is given from index.php mapping.
-    public function renderView($view)
+    public function renderView($view , $params = [])
     {
         $layoutContent = $this->layoutContent();
-        $viewContent = $this->renderOnlyView($view);
+        $viewContent = $this->renderOnlyView($view , $params);
 
         return str_replace('{{content}}' , $viewContent , $layoutContent);
     }
@@ -75,8 +95,15 @@ Class Router
         return ob_get_clean(); // Stop caching and start returning to the browser.
     }
 
-    protected function renderOnlyView($view)
+    protected function renderOnlyView($view , $params)
     {
+        // Pass the parameters from SiteController class to the callback view.
+        foreach ($params as $key => $value)
+        {
+            // If key exists, initialize variable with the name of key.
+            $$key = $value;
+        }   
+
         ob_start(); // Caching the ouptut of the browser.
         include_once Application::$ROOT_DIR."/views/$view.php";
         return ob_get_clean(); // Stop caching and start returning to the browser.
