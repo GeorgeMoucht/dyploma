@@ -4,7 +4,6 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\core\Request;
-use app\core\Application;
 /**
  * Class SiteController
  *  * 
@@ -32,14 +31,14 @@ class SiteController extends Controller
     }
 
     // Manipulation of post/get date from contact view.
-    public function handleContact()
+    public function handleContact(Request $request)
     {
-        // $body = $request->getBody();
-        $body = Application::$app->request->getBody();
-        // echo '<pre>';
-        // var_dump($body);
-        // echo '</pre>';
-        // exit;
+        $body = $request->getBody();
+        // $body = Application::$app->request->getBody();
+        echo '<pre>';
+        var_dump($body);
+        echo '</pre>';
+        exit;
         return 'Handling Submited date';
     }
 }
