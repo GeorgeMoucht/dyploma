@@ -66,13 +66,9 @@ Class Router
              * Initialize the callback as an object.
              * In our case if we see index.php we use the SiteController object.
              */
-            $callback[0] = new $callback[0]();
+            $callback[0] = new $callback[0];
         }
-
-        echo '<pre>';
-        var_dump($callback);
-        echo '</pre>';
-
+        
         return call_user_func($callback);
     }
 
