@@ -6,7 +6,12 @@ use app\core\Controller;
 use app\core\Request;
 /**
  * Class SiteController
- *  * 
+ * 
+ * This class is responsible for handling the data
+ * that are passed from the model,
+ * and data that are post from user
+ * to be used.
+ * 
  * @author George Mouchtaridis <giorgosmoucht@gmail.com>
  * @package app\controllers
 */
