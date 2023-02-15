@@ -35,6 +35,35 @@ class Request
     {
         return strtolower($_SERVER['REQUEST_METHOD']);
     }
+
+    //Habdle POST data from all forms.
+    public function getBody()
+    {
+        $body = [];
+        
+        /* Explanation
+         *
+         * Before we retrive the data, we need to sanitize them,
+         * and be sure that there are not muliware characters in them.
+         * To do that, we use the prebuild function filter_input().
+         * 
+        */
+
+        if($this->getMethod() === 'get')
+        {
+            foreach($_GET as $key => $value) {
+                $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+
+        if($this->getMethod() === 'post')
+        {
+            foreach($_POST as $key => $value) {
+                $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+        return $body;
+    }
 }
 
 ?>

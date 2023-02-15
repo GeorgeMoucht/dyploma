@@ -3,6 +3,8 @@ namespace app\controllers;
 
 
 use app\core\Controller;
+use app\core\Request;
+use app\core\Application;
 /**
  * Class SiteController
  *  * 
@@ -29,9 +31,15 @@ class SiteController extends Controller
         return $this->render('contact');
     }
 
-    // Manipulation of posted date from contact view.
+    // Manipulation of post/get date from contact view.
     public function handleContact()
     {
+        // $body = $request->getBody();
+        $body = Application::$app->request->getBody();
+        // echo '<pre>';
+        // var_dump($body);
+        // echo '</pre>';
+        // exit;
         return 'Handling Submited date';
     }
 }
