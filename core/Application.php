@@ -4,6 +4,7 @@ namespace app\core;
 use app\core\Router;
 use app\core\Request;
 use app\core\Response;
+use app\core\Controller;
 
 /**
  * Class Application
@@ -21,6 +22,7 @@ Class Application
     public Router $router;
     public Request $request;
     public Response $response;
+    public Controller $controller;
     // We initialize the $app inside the Application object so we can access it from other classes of core
     public static Application $app;
 
@@ -37,6 +39,16 @@ Class Application
     public function run()
     {
         echo $this->router->resolve();
+    }
+
+    public function getController(): Controller
+    {
+        return $this->controller;
+    }
+
+    public function setController(Controller $controller): void
+    {
+        $this->controller = $controller;
     }
 }
 

@@ -65,8 +65,10 @@ Class Router
             /**
              * Initialize the callback as an object.
              * In our case if we see index.php we use the SiteController object.
+             * So this is where we initialize the instance of our controller.
              */
-            $callback[0] = new $callback[0];
+            Application::$app->controller = new $callback[0];
+            $callback[0] = Application::$app->controller;
         }
         
         return call_user_func($callback , $this->request);
@@ -86,8 +88,9 @@ Class Router
     // with the requested view. Then echo it to the browser.
     protected function layoutContent()
     {
+        $layout = Application::$app->controller->layout;
         ob_start(); // Caching the output of the browser.
-        include_once Application::$ROOT_DIR."/views/layouts/main.php";
+        include_once Application::$ROOT_DIR."/views/layouts/$layout.php";
         return ob_get_clean(); // Stop caching and start returning to the browser.
     }
 

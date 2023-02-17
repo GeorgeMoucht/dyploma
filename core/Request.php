@@ -36,6 +36,18 @@ class Request
         return strtolower($_SERVER['REQUEST_METHOD']);
     }
 
+    //If the reqeuest is 'get' then return TRUE.
+    public function isGet()
+    {
+        return $this->method() == 'get';
+    }
+
+    //If the reqeuest is 'post' then return TRUE.
+    public function isPost()
+    {
+        return $this->method() == 'post';
+    }
+
     //Habdle POST data from all forms.
     public function getBody()
     {
