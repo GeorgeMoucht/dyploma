@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\core\Request;
+use app\models\RegisterModel;
 
 /**
  * Class AuthController
@@ -25,14 +26,31 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        $registerModel = new RegisterModel();
+
         //If request is post, we need to handle the posted date from user
         if($request->isPost()) {
-            return 'Handle sudmitted data of login form';
+            $registerModel->loadData($request->getBody());  // Pass all data from register form to the register model
+
+            if($registerModel->validate() && $registerModel->register()) {
+                return 'Success';
+            }
+
+            // echo '<pre>';
+            // var_dump($request->getBody());
+            // echo '</pre>';
+            // exit;
+            // return 'Handle sudmitted data of login form';
+            return $this->render('register' , [
+                'model' => $registerModel
+            ]);
         }
         
         $this->setLayout('auth');   
         //Just render the form if the request of user is GET.
-        return $this->render('register');
+        return $this->render('register' , [
+            'model' => $registerModel
+        ]);
     }
 }
 

@@ -25,6 +25,8 @@ class Controller
         $this->layout = $layout;
     }
 
+    // Params are the error messages that we need to echo messages into front-end of the user.
+    // Also we pass user data through $params, so we can have user data on every page that we render.
     public function render($view , $params = [])
     {
         return Application::$app->router->renderView($view , $params);

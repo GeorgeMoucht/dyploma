@@ -48,7 +48,7 @@ class Request
         return $this->method() == 'post';
     }
 
-    //Habdle POST data from all forms.
+    // It returns the posted data from forms as an array.
     public function getBody()
     {
         $body = [];
