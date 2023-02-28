@@ -36,6 +36,11 @@ class AuthController extends Controller
                 return 'Success';
             }
 
+            echo '<pre>';
+            var_dump($registerModel->errors);
+            echo '</pre>';
+            exit;
+
         
             // return 'Handle sudmitted data of login form';
             return $this->render('register' , [
