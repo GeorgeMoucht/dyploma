@@ -20,7 +20,7 @@ class RegisterModel extends Model
     public string $lastname;
     public string $email;
     public string $password;
-    public string $passwordConfirm;
+    public string $confirmPassword;
 
     public function register()
     {
