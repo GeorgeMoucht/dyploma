@@ -59,15 +59,45 @@ abstract class Model
                 if($ruleName === self::RULE_REQUIRED && !$value) {
                     $this->addError($attribute, self::RULE_REQUIRED);
                 }
+
+                // Validate RULE_EMAIL  
+                if($ruleName === self::RULE_EMAIL && !filter_var($value , FILTER_VALIDATE_EMAIL)) {
+                    $this->addError($attribute, self::RULE_EMAIL);
+                }
+
+                // Validate RULE_MIN
+                if($ruleName === self::RULE_MIN && strlen($value) < $rule['min']) {
+                    $this->addError($attribute, self::RULE_MIN, $rule);
+                }
+
+                // Validate RULE_MAX
+                if($ruleName === self::RULE_MAX && strlen($value) > $rule['max']) {
+                    $this->addError($attribute, self::RULE_MAX, $rule);
+                }
+
+                // Validate RULE_MATCH
+                if($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']}) {
+                    $this->addError($attribute, self::RULE_MATCH, $rule);
+                }
+
             }
         }
 
         return empty($this->errors);
     }
 
-    public function addError(string $attribute , string $rule)
+    public function addError(string $attribute , string $rule , $params = [])
     {
         $message = $this->errorMessages()[$rule] ?? '';
+
+        /* Note:
+         * Replace the params with the actual value.
+         * For example the error message of RULE_MAX contains '{max}'.
+         * This must be replaced with the validation number (24).
+        */
+        foreach($params as $key => $value) {
+            $message = str_replace("{{$key}}", $value , $message);
+        }
         $this->errors[$attribute][] = $message;
     }
 
