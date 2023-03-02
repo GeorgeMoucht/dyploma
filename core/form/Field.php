@@ -4,6 +4,7 @@
 namespace app\core\form;
 
 use app\core\Model;
+use app\core\form\Placeholder;
 
 
 /**
@@ -20,11 +21,15 @@ class Field
 {
     public Model $model;
     public string $attribute;
+    public Placeholder $placeholder;
+    // public string $placeholder;
 
-    public function __construct(Model $model, string $attribute)
+    public function __construct(Model $model, $attribute, $placeholder)
     {
         $this->model = $model;
         $this->attribute = $attribute;
+        $this->placeholder = $placeholder;
+        // var_dump($placeholder);exit;
     }
 
 
@@ -48,8 +53,8 @@ class Field
         );
     }
 
-    public function placeholderMessages($attribute, $placeholder)
-    {
+    // public function placeholderMessages($attribute, $placeholder)
+    // {
 
-    }
+    // }
 }

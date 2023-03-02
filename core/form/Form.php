@@ -5,6 +5,7 @@ namespace app\core\form;
 
 
 use app\core\Model;
+use app\core\form\Placeholder;
 
 /**
  * 
@@ -28,8 +29,21 @@ class Form
         echo '</form>';
     }
 
-    public function field(Model $model, $attribute)
+    public function field(Model $model, $attribute, $placeholder)
     {
-        return new Field($model, $attribute);
+        if(is_string($placeholder))
+        {
+            echo "string";exit;
+        }
+
+        if(is_array($placeholder))
+        {
+            echo "array";
+            echo "<pre></pre>";
+            var_dump("placeholder");
+            exit;
+
+        }
+        return new Field($model, $attribute, $placeholder);
     }
 }
