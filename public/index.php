@@ -10,8 +10,21 @@ use app\controllers\AuthController;
 // Echo errors messages.
 ini_set('display_errors', 1); error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);    
 
+// Database configuration settings that are
+// retrieved from .env by the help of dotenv package.
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
 
-$app = new Application(dirname(__DIR__));   // Initialize application.
+$config = [
+    'db' => [
+        'dsn' => $_ENV['DB_DSN'],
+        'user' => $_ENV['DB_USER'],
+        'password' => $_ENV['DB_PASSWORD']
+    ]
+];
+
+
+$app = new Application(dirname(__DIR__), $config);   // Initialize application.
 
 // Mapping all the allowed paths to the application.
 
