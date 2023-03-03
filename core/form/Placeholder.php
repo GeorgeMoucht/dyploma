@@ -16,20 +16,16 @@ use app\core\Model;
 
 class Placeholder
 {
-    public string $attribute;
-
-    // public array $messages = 
-    // [
-    //     'firstname' =>'Enter your first name',
-    //     'lastname' =>'Enter your last name',
-    //     'email' =>'Enter your email address',
-    //     'firstname' =>'Enter your first name',
-
-    // ];
 
     public function register()
     {
-        echo "WEEEE";exit;
+        return [
+            'firstname' => 'Enter your first name',
+            'lastname' => 'Enter your last name',
+            'email' => 'Enter your email address',
+            'password' => 'Enter your password',
+            'confirmPassword' => 'Repeat you password again'
+        ];
     }
 
 }

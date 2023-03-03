@@ -5,7 +5,6 @@ namespace app\core\form;
 
 
 use app\core\Model;
-use app\core\form\Placeholder;
 
 /**
  * 
@@ -29,21 +28,9 @@ class Form
         echo '</form>';
     }
 
-    public function field(Model $model, $attribute, $placeholder)
+    // By callback we mean the Placeholder class.
+    public function field(Model $model, $attribute, $callback)
     {
-        if(is_string($placeholder))
-        {
-            echo "string";exit;
-        }
-
-        if(is_array($placeholder))
-        {
-            echo "array";
-            echo "<pre></pre>";
-            var_dump("placeholder");
-            exit;
-
-        }
-        return new Field($model, $attribute, $placeholder);
+        return new Field($model, $attribute, $callback);
     }
 }

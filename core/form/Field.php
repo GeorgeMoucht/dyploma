@@ -21,15 +21,18 @@ class Field
 {
     public Model $model;
     public string $attribute;
-    public Placeholder $placeholder;
-    // public string $placeholder;
+    public array $placeholderArray;
 
-    public function __construct(Model $model, $attribute, $placeholder)
+    public function __construct(Model $model, $attribute, $callback)
     {
         $this->model = $model;
         $this->attribute = $attribute;
-        $this->placeholder = $placeholder;
-        // var_dump($placeholder);exit;
+     
+        if(is_array($callback)) {
+            $callback[0] = new Placeholder;
+            $this->placeholderArray = call_user_func($callback);
+        }
+
     }
 
 
@@ -48,13 +51,9 @@ class Field
         $this->attribute,
         $this->model->{$this->attribute},
         $this->model->hasError($this->attribute) ? ' is-invalid' : '',
-        ucfirst($this->attribute),
+        $this->placeholderArray[$this->attribute],
         $this->model->getFirstError($this->attribute)
         );
     }
 
-    // public function placeholderMessages($attribute, $placeholder)
-    // {
-
-    // }
 }
