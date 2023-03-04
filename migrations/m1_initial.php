@@ -30,7 +30,8 @@ class m1_initial
     {
         $db = \app\core\Application::$app->db;
         $SQL = "DROP TABLE users;";
-        $db->pdo->exec($SQL);    }
+        $db->pdo->exec($SQL);    
     }
+}
 
 ?>
