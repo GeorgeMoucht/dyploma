@@ -91,6 +91,10 @@ class Database
 
     }
 
+    public function prepare($sql)
+    {
+        return $this->pdo->prepare($sql);
+    }
 
     private function log($message)
     {
