@@ -28,5 +28,13 @@ class Placeholder
         ];
     }
 
+    public function login()
+    {
+        return [
+            'email' => 'Enter your email address.',
+            'password' => 'Enter your password.'
+        ];
+    }
+
 }
 

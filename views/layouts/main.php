@@ -1,5 +1,9 @@
 <?php
     use app\core\Application;
+
+    echo '<pre>';
+    var_dump($user);
+    echo '</pre>';
 ?>
 <!doctype html>
 <html lang="en">
