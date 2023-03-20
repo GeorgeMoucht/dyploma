@@ -3,6 +3,7 @@
 namespace app\core;
 use app\core\Router;
 use app\core\Request;
+use app\core\Session;
 use app\core\Response;
 use app\core\Controller;
 
@@ -23,6 +24,7 @@ Class Application
     public Request $request;
     public Response $response;
     public Controller $controller;
+    public Session $session;
     // We initialize the $app inside the Application object so we can access it from other classes of core
     public static Application $app;
     public Database $db;
@@ -33,6 +35,7 @@ Class Application
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
         $this->request = new Request();
+        $this->session = new Session();
         $this->response = new Response();
         $this->router = new Router($this->request , $this->response);
     

@@ -33,6 +33,17 @@ class User extends DbModel
         return 'users';
     }
 
+    public function labels(): array
+    {
+        return [
+            'firstname' => 'First Name',
+            'lastname' => 'Last Name',
+            'email' => 'Email',
+            'password' => 'Password',
+            'confirmPassword' => 'Confirm your password'
+        ];
+    }
+
     // Override the save() method from DbModel so we can encrypt the password 
     // attribute before the push to db.
     public function save()

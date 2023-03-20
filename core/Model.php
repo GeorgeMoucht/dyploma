@@ -27,6 +27,17 @@ abstract class Model
     // Since this function is abstract, every child class should implement this function.
     abstract public function rules(): array;
 
+    public function labels(): array
+    {
+        return [];
+    }
+
+    public function getLabel($attribute)
+    {
+        return $this->labels()[$attribute] ?? $attribute;
+    }
+
+
     // Read data that are posted by the user.
     // Before every validation of a model, loadData() is required to be called.
     public function loadData($data)
@@ -78,6 +89,7 @@ abstract class Model
 
                 // Validate RULE_MATCH
                 if($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']}) {
+                    $rule['match'] = $this->getLabel($rule['match']);
                     $this->addError($attribute, self::RULE_MATCH, $rule);
                 }
 
@@ -95,7 +107,7 @@ abstract class Model
                     $record = $statement->fetchObject();
 
                     if($record) {
-                        $this->addError($attribute, self::RULE_UNIQUE, ['field' => $attribute]);
+                        $this->addError($attribute, self::RULE_UNIQUE, ['field' => $this->getLabel($attribute)]);
                     }
                 }
 
