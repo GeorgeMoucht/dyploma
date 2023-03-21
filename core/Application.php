@@ -50,6 +50,8 @@ Class Application
         if($primaryValue) {
             $primaryKey = $this->userClass::primaryKey();
             $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);    
+        } else {
+            $this->user = null;
         }
     }
 
@@ -81,6 +83,11 @@ Class Application
     {
         $this->user = null;
         $this->session->remove('user');
+    }
+
+    public static function isGuest()
+    {
+        return !self::$app->user;
     }
 }
 
