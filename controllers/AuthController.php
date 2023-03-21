@@ -8,6 +8,7 @@ use app\core\Request;
 use app\models\User;
 use app\models\LoginForm;
 use app\core\Response;
+use app\core\middlewares\AuthMiddleware;
 
 /**
  * Class AuthController
@@ -20,6 +21,11 @@ use app\core\Response;
 
 class AuthController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->registerMiddleware(new AuthMiddleware(['profile']));
+    }
     
     public function login(Request $request, Response $response)
     { 
@@ -72,6 +78,11 @@ class AuthController extends Controller
     {
         Application::$app->logout();
         $response->redirect('/');
+    }
+
+    public function profile()
+    {
+        return $this->render('profile');
     }
 }
 

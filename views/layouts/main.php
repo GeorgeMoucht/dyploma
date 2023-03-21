@@ -39,6 +39,9 @@
                         </ul>
                     <?php else: ?>
                         <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                                <a class="nav-link" href="/profile">Profile</a>
+                            </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="/logout">Welcome <?php echo Application::$app->user->getDisplayName(); ?>
                                     (Logout)

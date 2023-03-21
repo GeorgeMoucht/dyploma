@@ -3,6 +3,7 @@
 namespace app\core;
 use app\core\Request;
 use app\core\Response;
+use app\core\exception\NotFoundException;
 
 /**
  * Class Router
@@ -54,7 +55,8 @@ Class Router
               * that match with initialization of index.php
             */
             $this->response->setStatusCode(404);
-            return $this->renderView("_404");
+            // return $this->renderView("_404");
+            throw new NotFoundException();
         }
 
         if(is_string($callback)) {
@@ -62,14 +64,26 @@ Class Router
         }
 
         if(is_array($callback)) {
+            /** @var \app\core\Controller $controller */
+            $controller = new $callback[0];
+            Application::$app->controller = $controller;
             /**
              * Initialize the callback as an object.
              * In our case if we see index.php we use the SiteController object.
              * So this is where we initialize the instance of our controller.
              */
-            Application::$app->controller = new $callback[0];
-            $callback[0] = Application::$app->controller;
+            $controller->action = $callback[1];
+            $callback[0] = $controller;
+
+            $middlewares = $controller->getMiddlewares();
+            //Check if user have access to this page.
+            foreach($middlewares as $middleware) {
+                $middleware->execute();
+            }
+
         }
+
+
         
         return call_user_func($callback , $this->request, $this->response);
     }
@@ -87,8 +101,12 @@ Class Router
     // We need to read layout as a string and replace {{contact}}
     // with the requested view. Then echo it to the browser.
     protected function layoutContent()
-    {
-        $layout = Application::$app->controller->layout;
+    {   
+        $layout = Application::$app->layout;    // Observer error when none controller is initialized and we can't access layout property.
+        if(Application::$app->controller) 
+        {
+            $layout = Application::$app->controller->layout;
+        }
         ob_start(); // Caching the output of the browser.
         include_once Application::$ROOT_DIR."/views/layouts/$layout.php";
         return ob_get_clean(); // Stop caching and start returning to the browser.
