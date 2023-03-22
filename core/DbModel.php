@@ -2,6 +2,7 @@
 
 namespace app\core;
 
+use app\core\Model;
 
 /**
  * Class DbModel
@@ -60,6 +61,16 @@ abstract class DbModel extends Model
         return $statement->fetchObject(static::class);
     }
 
+    public function assignDefaultRole()
+    {
+        $tableName = static::tableName();
+
+        $statement = self::prepare("SELECT * FROM $tableName;");
+
+        $statement->execute();
+
+        return $statement->fetchObject(static::class);
+    }
 }
 
 ?>
