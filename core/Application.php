@@ -98,6 +98,17 @@ Class Application
     {
         return !self::$app->user;
     }
+
+    public static function isAdmin()
+    {
+        if(self::$app->user) {
+            if(self::$app->user->role == 'admin') {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }
 
 ?>
