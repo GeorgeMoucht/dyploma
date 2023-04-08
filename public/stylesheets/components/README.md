@@ -1,0 +1,3 @@
+# Components
+
+For small components, there is the 'components/' directory. Wile the 'layout/' directory is a macro (global wireframe), the 'components/' is more focused on widgets. It contains all kind of spcific modules like slider, loader, widget and basically anything along those lines. There are usually a lot of files in 'components/' since the whole application/site should be mostly composed of small modules.
