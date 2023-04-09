@@ -1,0 +1,25 @@
+/**
+    * Basic container that wrap all components
+*/
+
+.container {
+    width: $max-width;
+}
+
+/**
+    * Make the element display: flex.
+    * Note: it needs the container rule also to work.
+*/
+.fl-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.fl-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    flex-grow: 1;
+}
