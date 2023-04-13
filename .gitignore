@@ -1,3 +1,4 @@
 /vendor/
+/public/stylesheets/.sass-cache/
 .idea
 .env
