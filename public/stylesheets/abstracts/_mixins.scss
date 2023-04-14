@@ -1,0 +1,9 @@
+@mixin menu-hover {
+    &:hover {
+        background-color: #c8c8c872;
+    }
+
+    &:active {
+        background-color: #c8c8c8b9;
+    }
+}
