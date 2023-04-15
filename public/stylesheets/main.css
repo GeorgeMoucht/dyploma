@@ -2,7 +2,8 @@
     * Set up a decent box model on the root element
 */
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /**
     * Make all elements from the DOM inherit from
@@ -11,29 +12,34 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 /**
     * Basic styles for links
 */
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 body {
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+}
 
 html {
-  font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: #050505; }
+  color: #050505;
+}
 
 /**
     * Basic container that wrap all components
 */
 .container {
-  width: 100%; }
+  width: 100%;
+}
 
 /**
     * Make the element display: flex.
@@ -41,65 +47,105 @@ html {
 */
 .fl-col {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .fl-row {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+}
 
 .col {
-  flex-grow: 1; }
+  flex-grow: 1;
+}
 
 .image-cnt {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 .navigation {
   background-color: #FFFFFF;
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25); }
-  .navigation .logo {
-    width: 10%; }
-  .navigation .menu {
-    width: 85%; }
-    .navigation .menu .menu-list {
-      overflow: hidden;
-      white-space: nowrap;
-      height: 100%;
-      margin: 0px;
-      align-items: center; }
-      .navigation .menu .menu-list li {
-        padding: 13px;
-        display: inline-block;
-        cursor: pointer; }
-        .navigation .menu .menu-list li:hover {
-          background-color: #c8c8c872; }
-        .navigation .menu .menu-list li:active {
-          background-color: #c8c8c8b9; }
-  .navigation .my-courses-btn {
-    justify-content: center;
-    align-items: center;
-    /**
-        * Give to all child elements
-        * margin of 2px.
-    */ }
-    .navigation .my-courses-btn span {
-      white-space: nowrap; }
-    .navigation .my-courses-btn > * {
-      margin: 2px; }
-    .navigation .my-courses-btn .profile-image {
-      border-radius: 50%;
-      width: 30px;
-      height: 30px; }
-  .navigation .notifications {
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px; }
-    .navigation .notifications i {
-      fill: black;
-      font-size: 20px; }
+  -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);
+}
+.navigation .logo {
+  width: 10%;
+}
+.navigation .menu {
+  width: 85%;
+}
+.navigation .menu .menu-list {
+  overflow: hidden;
+  white-space: nowrap;
+  height: 100%;
+  margin: 0px;
+  align-items: center;
+}
+.navigation .menu .menu-list li {
+  padding: 13px;
+  display: inline-block;
+  cursor: pointer;
+}
+.navigation .menu .menu-list li:hover {
+  background-color: rgba(200, 200, 200, 0.4470588235);
+}
+.navigation .menu .menu-list li:active {
+  background-color: rgba(200, 200, 200, 0.7254901961);
+}
+.navigation .my-courses-btn {
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /**
+      * Make the text underline on hover.
+  */
+  /**
+      * Give to all child elements
+      * margin of 2px.
+  */
+}
+.navigation .my-courses-btn:hover {
+  background-color: rgba(200, 200, 200, 0.4470588235);
+}
+.navigation .my-courses-btn:active {
+  background-color: rgba(200, 200, 200, 0.7254901961);
+}
+.navigation .my-courses-btn:hover {
+  text-decoration: underline;
+}
+.navigation .my-courses-btn span {
+  white-space: nowrap;
+}
+.navigation .my-courses-btn > * {
+  margin: 2px;
+}
+.navigation .my-courses-btn .profile-image {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.navigation .notifications {
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.navigation .notifications:hover {
+  background-color: rgba(200, 200, 200, 0.4470588235);
+}
+.navigation .notifications:active {
+  background-color: rgba(200, 200, 200, 0.7254901961);
+}
+.navigation .notifications i {
+  fill: black;
+  font-size: 20px;
+}
+.navigation .right-menu {
+  float: right;
+}
 
 /*# sourceMappingURL=main.css.map */

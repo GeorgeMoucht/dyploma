@@ -25,14 +25,23 @@
             </ul>
         </div>
 
-        <div class="image-cnt my-courses-btn col fl-row">
-            <img class="profile-image" src="images/default-avatar.png" alt="Profile image">    
-            <span>My Courses</span>
-        </div>
+        <?php if(Application::isGuest()): ?>
+            <div class="menu col">
+                <ul class="menu-list fl-row right-menu">
+                    <li>Login</li>
+                    <li>Register</li>
+                </ul>
+            </div>
+        <?php else: ?>
+            <div class="image-cnt my-courses-btn col fl-row">
+                <img class="profile-image" src="images/default-avatar.png" alt="Profile image">    
+                <span>My Courses</span>
+            </div>
 
-        <div class="notifications col fl-col">
-            <i class="bi bi-bell"></i>
-        </div>
+            <div class="notifications col fl-col">
+                <i class="bi bi-bell"></i>
+            </div>
+        <?php endif; ?>
     </div>
 
 

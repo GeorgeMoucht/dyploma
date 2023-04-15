@@ -33,9 +33,18 @@
     .my-courses-btn {
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+        @include menu-hover;
+
+        /**
+            * Make the text underline on hover.
+        */
+        &:hover {
+            text-decoration: underline;
+        }
 
         span {
-            white-space: nowrap;;
+            white-space: nowrap;
         }
         /**
             * Give to all child elements
@@ -59,6 +68,8 @@
         padding: 10px;
         padding-left: 20px;
         padding-right: 20px;
+        cursor: pointer;
+        @include menu-hover;
 
         i {
             fill: black;
@@ -67,6 +78,9 @@
 
     }
 
+    .right-menu {
+        float: right;
+    }
 
 
 }
