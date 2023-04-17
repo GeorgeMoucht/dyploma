@@ -43,7 +43,7 @@
                 </ul>
             </div>
         <?php else: ?>
-            <div class="image-cnt my-courses-btn col fl-row">
+            <div class="image-cnt my-courses-btn col fl-row" onclick="toggleMenu()">
                 <img class="profile-image" src="images/default-avatar.png" alt="Profile image">    
                 <span>My Courses</span>
             </div>
@@ -54,8 +54,10 @@
         <?php endif; ?>
     </div>
 
-    <div class="navigation-collapse container">
-            
+    <div class="navigation-collapse container" id="dropDownMenu" onclick="closeToggleMenu()">
+        <div class="close-menu" style="background-color: yellow; width: 50px; cursor: pointer;">
+            Close
+        </div>
     </div>
 
 

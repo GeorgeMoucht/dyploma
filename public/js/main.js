@@ -1,8 +1,9 @@
-window.onload = function() {
+const subMenu = document.getElementById('dropDownMenu');
 
-    const menu_btn = document.querySelector('.hamburger');
+function toggleMenu() {
+    subMenu.classList.toggle('show-navigation');
+}
 
-    menu_btn.addEventListener('click', function() {
-        menu_btn.classList.toggle('is-active');
-    });
+function closeToggleMenu() {
+    subMenu.classList.remove('show-navigation');
 }
