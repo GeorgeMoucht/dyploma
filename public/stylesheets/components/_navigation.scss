@@ -99,11 +99,28 @@
     height: 100vh;
     max-height: 0px;
     overflow: hidden;
-    background-color: red;
+    background-color: $primary-white-background;
     position: absolute;
     top: 0;
     z-index: 30;
     transition: max-height 0.5s;
+
+    .coll-nav-header {
+        background-color: #A451C8;
+        height: 13vh;
+        width: 100%;
+        // justify-content: center;
+        align-items: center;
+
+        .image-cnt {
+            background-color: red;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            // height: 30px;
+        }
+    }
 }
 
 

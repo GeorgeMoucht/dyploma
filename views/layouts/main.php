@@ -55,6 +55,18 @@
     </div>
 
     <div class="navigation-collapse container" id="dropDownMenu" onclick="closeToggleMenu()">
+        <div class="coll-nav-header fl-row">
+            <div class="image-cnt col">
+                <img class="profile-image" src="images/default-avatar.png" alt="Profile image">
+            </div>
+            <div class="dsf col" style="background-color: yellow; flex-grow: 5;">
+                sdf
+            </div>
+            <div class="dsf col" style="background-color: orange;">
+                sdf
+            </div>
+
+        </div>
         <div class="close-menu" style="background-color: yellow; width: 50px; cursor: pointer;">
             Close
         </div>
