@@ -15,21 +15,31 @@
 <body>
     <div class="navigation container fl-row">
         <div class="logo col">
-            <span>LOGO</span>
+            <img src="images/edu-logo.png" alt="">
         </div>
         <div class="menu col">
             <ul class="menu-list fl-row">
-                <li>Home</li>
-                <li>Courses</li>
-                <li>Forum</li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/courses">Courses</a>
+                </li>
+                <li>
+                    <a href="/forum">Forum</a>
+                </li>
             </ul>
         </div>
 
         <?php if(Application::isGuest()): ?>
             <div class="menu col">
                 <ul class="menu-list fl-row right-menu">
-                    <li>Login</li>
-                    <li>Register</li>
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                    <li>
+                        <a href="/register">Register</a>
+                    </li>
                 </ul>
             </div>
         <?php else: ?>
@@ -42,6 +52,10 @@
                 <i class="bi bi-bell"></i>
             </div>
         <?php endif; ?>
+    </div>
+
+    <div class="navigation-collapse container">
+            
     </div>
 
 

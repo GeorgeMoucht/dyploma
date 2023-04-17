@@ -17,13 +17,27 @@ html {
 }
 
 /**
-    * Basic styles for links
+    * Basic styles for links.
+    * Make primary color the $primary-text-dark
+    * variable and set the text-decoration to none.
 */
-
 a {
     text-decoration: none;
+    color: $primary-text-dark;
+
+    &:active {
+        color: $primary-text-dark;
+    }
+
+    &:visited {
+        color: $primary-text-dark;
+    }
 }
 
+/**
+    * Remove unnecessary margin and padding
+    * from the body element.
+*/
 body {
     margin: 0px;
     padding: 0px;
