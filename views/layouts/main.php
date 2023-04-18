@@ -60,9 +60,11 @@
                 <img class="profile-image" src="images/default-avatar.png" alt="Profile image">    
             </div>
             <div class="nav-coll-menu col fl-col">
-                <h2 class="col full-name">Full Name</h2>
+                <h2 class="col full-name">
+                    <?php echo Application::$app->user->getDisplayName(); ?>
+                </h2>
                 <div class="col menu-list">
-                    <a href="">Profile</a>
+                    <a href="/profile">Profile</a>
                     <span>-</span>
                     <a href="">Dashboard</a>
                     <span>-</span>
@@ -70,7 +72,7 @@
                     <span>-</span>
                     <a href="">Preferences</a>
                     <span>-</span>
-                    <a href="">Log out</a>
+                    <a href="/logout">Log out</a>
                 </div>
             </div>
             <div class="close-coll-navigation col">

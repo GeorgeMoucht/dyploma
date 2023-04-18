@@ -28,3 +28,17 @@
     max-width: 100%;
     height: auto;
 }
+
+/**
+    * Put border for every element that we want to display with a border
+    * good example is the layout of profile page.
+*/
+.block {
+    border: 1px solid black;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.global-wrapper {
+    padding: 1rem;
+}

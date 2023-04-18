@@ -40,6 +40,16 @@ body {
   padding: 0px;
 }
 
+.bookmark-section {
+  list-style-type: none;
+}
+.bookmark-section li {
+  margin: 0 10px; /* adjust as needed */
+}
+.bookmark-section li a:hover {
+  text-decoration: underline;
+}
+
 html {
   font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
   font-size: 16px;
@@ -75,6 +85,20 @@ html {
 .image-cnt {
   max-width: 100%;
   height: auto;
+}
+
+/**
+    * Put border for every element that we want to display with a border
+    * good example is the layout of profile page.
+*/
+.block {
+  border: 1px solid black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.global-wrapper {
+  padding: 1rem;
 }
 
 .navigation {
@@ -222,6 +246,19 @@ html {
 */
 .show-navigation {
   max-height: 100vh;
+}
+
+.profile-header .profile-image {
+  border-radius: 50%;
+}
+.profile-header .name {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 1rem;
+}
+
+.main-content {
+  background-color: red;
 }
 
 /*# sourceMappingURL=main.css.map */

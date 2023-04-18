@@ -42,3 +42,18 @@ body {
     margin: 0px;
     padding: 0px;
 }
+
+.bookmark-section {
+    list-style-type: none;
+
+    li {
+        margin: 0 10px; /* adjust as needed */
+
+        a {
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
