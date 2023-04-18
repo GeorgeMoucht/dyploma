@@ -6,7 +6,6 @@
 
     .logo {
         width: 10%;
-        // background-color: red;
 
         /**
             * Adjust logo width to fit the parent
@@ -19,12 +18,10 @@
 
     .menu {
         width: 85%;
-        // background-color: pink;
 
         .menu-list {
             overflow: hidden;
             white-space: nowrap;
-            // background-color: orange;
             height: 100%;
             margin: 0px;
             align-items: center;
@@ -32,7 +29,6 @@
             li {
                 padding: 13px;
                 display: inline-block;
-                // background-color: yellow;
                 cursor: pointer;
                 @include menu-hover;
             }
@@ -71,7 +67,6 @@
     }
 
     .notifications {
-        // background-color: red;
         align-items: center;
         justify-content: center;
         padding: 10px;
@@ -104,23 +99,56 @@
     top: 0;
     z-index: 30;
     transition: max-height 0.5s;
+    color: $white;
 
-    .coll-nav-header {
-        background-color: #A451C8;
-        height: 13vh;
-        width: 100%;
-        // justify-content: center;
-        align-items: center;
-
-        .image-cnt {
-            background-color: red;
-        }
+    .nav-coll-header {
+        background-color: $logo-purple;
+        padding: 1.5rem;
 
         .profile-image {
-            border-radius: 50%;
-            // height: 30px;
+            width: 3%;
+            justify-content: center;
+
+            img {
+                width: 90px;
+                border-radius: 50%;
+            }
+        }
+
+        .nav-coll-menu {
+            width: 90%;
+            padding: 1rem;
+
+            .full-name {
+                margin: 0px;
+            }
+
+            .menu-list {
+                margin-top: .5rem;
+
+                a {
+                    color: $white;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
     }
+
+    .close-coll-navigation {
+
+        .close-cnt {
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        i {
+            font-size: 25px;
+        }
+    }
+    
 }
 
 

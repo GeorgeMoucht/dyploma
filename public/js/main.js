@@ -1,5 +1,9 @@
 const subMenu = document.getElementById('dropDownMenu');
 
+subMenu.addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+
 function toggleMenu() {
     subMenu.classList.toggle('show-navigation');
 }

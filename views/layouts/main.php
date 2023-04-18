@@ -54,22 +54,34 @@
         <?php endif; ?>
     </div>
 
-    <div class="navigation-collapse container" id="dropDownMenu" onclick="closeToggleMenu()">
-        <div class="coll-nav-header fl-row">
-            <div class="image-cnt col">
-                <img class="profile-image" src="images/default-avatar.png" alt="Profile image">
+    <div class="navigation-collapse container" id="dropDownMenu" >
+        <div class="nav-coll-header container fl-row">
+            <div class="profile-image col fl-row">
+                <img class="profile-image" src="images/default-avatar.png" alt="Profile image">    
             </div>
-            <div class="dsf col" style="background-color: yellow; flex-grow: 5;">
-                sdf
+            <div class="nav-coll-menu col fl-col">
+                <h2 class="col full-name">Full Name</h2>
+                <div class="col menu-list">
+                    <a href="">Profile</a>
+                    <span>-</span>
+                    <a href="">Dashboard</a>
+                    <span>-</span>
+                    <a href="">Grades</a>
+                    <span>-</span>
+                    <a href="">Preferences</a>
+                    <span>-</span>
+                    <a href="">Log out</a>
+                </div>
             </div>
-            <div class="dsf col" style="background-color: orange;">
-                sdf
+            <div class="close-coll-navigation col">
+                <div class="close-cnt fl-col" onclick="closeToggleMenu()">
+                    <i class="bi bi-x-lg"></i>
+                    Close
+                </div>
             </div>
+        </div>
 
-        </div>
-        <div class="close-menu" style="background-color: yellow; width: 50px; cursor: pointer;">
-            Close
-        </div>
+
     </div>
 
 
