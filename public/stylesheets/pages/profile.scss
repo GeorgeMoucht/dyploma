@@ -12,5 +12,31 @@
 }
 
 .main-content {
-    background-color: red;
+    // background-color: red;
+
+    .profile-col-left {
+        margin-right: .5rem;
+    }
+
+    .profile-col-right {
+        margin-left: .5rem;
+    }
+
+    .user-details {
+
+        h3 {
+            margin-top: 0px;
+            font-weight: normal;
+        }
+
+        h4 {
+            margin-top: 0px;
+            margin-bottom: .5rem;
+        }
+        
+        span {
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+    }
 }

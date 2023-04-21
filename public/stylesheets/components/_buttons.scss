@@ -1,0 +1,13 @@
+.btn {
+    // float: right;
+    padding: $btn-padding;
+    background: transparent;
+    border-radius: 6px;
+    border-color: $logo-purple;
+    color: $logo-purple;
+    cursor: pointer;
+}
+
+.edit-btn {
+    float: right;
+}
