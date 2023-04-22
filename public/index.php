@@ -51,6 +51,9 @@ $app->router->get('/logout', [AuthController::class,'logout']);
 //Profile Page
 $app->router->get('/profile', [AuthController::class,'profile']);
 
+//Courses Page
+$app->router->get('/courses', [SiteController::class, 'courses']);
+
 //Admin_panel Page
 $app->router->get('/admin_panel', [AdminController::class, 'admin_panel']);
 
