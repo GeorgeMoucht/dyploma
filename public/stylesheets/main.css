@@ -232,4 +232,45 @@ html {
   margin-bottom: 1rem;
   display: inline-block; }
 
+.header-wrapper {
+  padding: 3rem;
+  padding-left: 13rem;
+  justify-content: center; }
+  .header-wrapper h3 {
+    font-size: 30px;
+    font-weight: 500; }
+  .header-wrapper p {
+    font-size: 18px;
+    max-width: 50%;
+    margin-top: 0px; }
+
+.courses-glob-wrapper {
+  background-color: #F7F7F7; }
+  .courses-glob-wrapper .search-wrapper {
+    border: 1px solid black;
+    width: 30%; }
+    .courses-glob-wrapper .search-wrapper h2 {
+      font-size: 20px;
+      width: 100%;
+      display: inline-block;
+      font-weight: normal; }
+    .courses-glob-wrapper .search-wrapper .checkbox-wrapper {
+      width: 100%;
+      display: inline-block; }
+      .courses-glob-wrapper .search-wrapper .checkbox-wrapper input[type="checkbox"] {
+        width: 25px;
+        height: 25px; }
+      .courses-glob-wrapper .search-wrapper .checkbox-wrapper label {
+        font-size: 18px;
+        position: relative;
+        bottom: 5px;
+        margin-left: 1rem; }
+    .courses-glob-wrapper .search-wrapper .sub-menu {
+      border: 1px solid red;
+      width: auto;
+      margin-left: 37%; }
+  .courses-glob-wrapper .display-courses-wrapper {
+    background-color: orange;
+    width: 70%; }
+
 /*# sourceMappingURL=main.css.map */
