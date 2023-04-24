@@ -25,6 +25,7 @@ class AdminController extends Controller
 
     public function admin_panel()
     {
+        // TODO: Check if the user role is admin
         $this->setLayout('main');
         return $this->render('admin_panel');
     }

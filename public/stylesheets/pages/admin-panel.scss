@@ -1,0 +1,41 @@
+.admin-pannel-wrapper {
+    height: 94.4vh;
+    color: $primary-text-dark;
+
+    .sidebar-wrapper {
+        width: 10%;
+        background-color: $logo-purple;
+
+        .sidebar-list {
+            padding: 3px;
+
+            li{
+                text-align: center;
+                width: 100%;
+                padding: 4px;
+                list-style: none;
+                position: relative;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #bc63e2;
+                }
+
+                .bi-person-circle {
+                    padding-right: 1rem;
+                }
+
+                .bi-caret-right-fill {
+                    position: absolute;
+                    right: 10px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .main-wrapper {
+        width: 90%;
+        background-color: #EFEFF6;
+    }
+}
