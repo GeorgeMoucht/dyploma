@@ -86,6 +86,63 @@
         float: right;
     }
 
+    .btn-admin-dashboard {
+        align-items: center;
+        // justify-content: center;
+        padding: 1rem;
+        @include menu-hover;
+
+        a {
+            align-items:  center;
+
+            &:hover {
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+       
+        i{
+            fill: white;
+            font-size: 21px;
+            margin-right: .2rem;
+        }
+
+    }
+
+    .admin-btn {
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        @include menu-hover;
+
+        i {
+            margin-right: .2rem;
+            font-size: 18px;
+        }
+
+        /**
+            * Make the text underline on hover.
+        */
+        &:hover {
+            text-decoration: underline;
+        }
+
+        span {
+            white-space: nowrap;
+        }
+        /**
+            * Give to all child elements
+            * margin of 2px.
+        */
+        > * {
+            margin: 2px;
+        }
+    
+    }
+
+
 
 }
 

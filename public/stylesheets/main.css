@@ -155,6 +155,45 @@ html {
       font-size: 20px; }
   .navigation .right-menu {
     float: right; }
+  .navigation .btn-admin-dashboard {
+    align-items: center;
+    padding: 1rem; }
+    .navigation .btn-admin-dashboard:hover {
+      background-color: #c8c8c872; }
+    .navigation .btn-admin-dashboard:active {
+      background-color: #c8c8c8b9; }
+    .navigation .btn-admin-dashboard a {
+      align-items: center; }
+      .navigation .btn-admin-dashboard a:hover span {
+        text-decoration: underline; }
+    .navigation .btn-admin-dashboard i {
+      fill: white;
+      font-size: 21px;
+      margin-right: .2rem; }
+  .navigation .admin-btn {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /**
+        * Make the text underline on hover.
+    */
+    /**
+        * Give to all child elements
+        * margin of 2px.
+    */ }
+    .navigation .admin-btn:hover {
+      background-color: #c8c8c872; }
+    .navigation .admin-btn:active {
+      background-color: #c8c8c8b9; }
+    .navigation .admin-btn i {
+      margin-right: .2rem;
+      font-size: 18px; }
+    .navigation .admin-btn:hover {
+      text-decoration: underline; }
+    .navigation .admin-btn span {
+      white-space: nowrap; }
+    .navigation .admin-btn > * {
+      margin: 2px; }
 
 .navigation-collapse {
   width: 100%;
