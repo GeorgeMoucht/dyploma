@@ -271,6 +271,22 @@ html {
       margin-left: 37%; }
   .courses-glob-wrapper .display-courses-wrapper {
     background-color: orange;
-    width: 70%; }
+    width: 70%;
+    align-items: center; }
+    .courses-glob-wrapper .display-courses-wrapper h2 {
+      font-size: 20px;
+      width: 100%;
+      display: inline-block;
+      font-weight: normal;
+      padding-left: 2rem; }
+    .courses-glob-wrapper .display-courses-wrapper .courses-list {
+      width: 90%;
+      background-color: yellow;
+      flex-wrap: wrap; }
+      .courses-glob-wrapper .display-courses-wrapper .courses-list .course-card {
+        flex-basis: calc(100% / 3);
+        max-width: calc(100% / 3);
+        box-sizing: border-box;
+        border: 1px solid black; }
 
 /*# sourceMappingURL=main.css.map */

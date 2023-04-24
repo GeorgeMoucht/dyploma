@@ -27,12 +27,33 @@
                 <input type="checkbox" name="input4" id="input4">
                 <label for="input4">input4</label>
             </div>
-
-
         </div>
 
     </div>
-    <div class="col display-courses-wrapper">
-        <h2>Second col</h2>
+    <div class="col display-courses-wrapper fl-col">
+        <h2>Results: 160 courses</h2>
+
+        <div class="courses-list  fl-row">
+            <div class="course-card col">
+                first course
+            </div>
+            <div class="course-card col">
+                first course
+            </div>
+            <div class="course-card col">
+                first course
+            </div>
+            <div class="course-card col">
+                first course
+            </div>
+            <div class="course-card col">
+                first course
+            </div>
+            <div class="course-card col">
+                first course
+            </div>
+            
+        </div>
+
     </div>
 </div>
