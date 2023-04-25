@@ -336,12 +336,18 @@ html {
     background-color: #A657C9; }
     .admin-pannel-wrapper .sidebar-wrapper .sidebar-list {
       padding: 3px; }
+      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: none; }
       .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li {
         text-align: center;
         width: 100%;
         padding: 4px;
         list-style: none;
-        position: relative; }
+        position: relative;
+        align-items: center; }
         .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li:hover {
           cursor: pointer;
           background-color: #bc63e2; }
@@ -350,9 +356,18 @@ html {
         .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li .bi-caret-right-fill {
           position: absolute;
           right: 10px;
-          font-size: 14px; }
+          font-size: 14px;
+          transform: rotate(0deg); }
+      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list li {
+        text-align: left;
+        padding-left: 1rem; }
+        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list li:hover {
+          text-decoration: underline; }
   .admin-pannel-wrapper .main-wrapper {
     width: 90%;
     background-color: #EFEFF6; }
+
+.show {
+  display: block !important; }
 
 /*# sourceMappingURL=main.css.map */

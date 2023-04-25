@@ -9,12 +9,20 @@
         .sidebar-list {
             padding: 3px;
 
+            .collapse-list {
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                display: none;
+            }
+
             li{
                 text-align: center;
                 width: 100%;
                 padding: 4px;
                 list-style: none;
                 position: relative;
+                align-items: center;
 
                 &:hover {
                     cursor: pointer;
@@ -29,6 +37,19 @@
                     position: absolute;
                     right: 10px;
                     font-size: 14px;
+                    transform: rotate(0deg);
+                }
+            }
+
+            .collapse-list {
+                
+                li {
+                    text-align: left;
+                    padding-left: 1rem;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -38,4 +59,8 @@
         width: 90%;
         background-color: #EFEFF6;
     }
+}
+
+.show {
+    display: block !important;
 }

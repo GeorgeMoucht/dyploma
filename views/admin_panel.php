@@ -6,10 +6,17 @@
     <div class="sidebar-wrapper col">
         <h4>Menu</h4>
         <ul class="sidebar-list">
-            <li class="fl-row">
+            <li class="fl-row" onclick="toggleAdminSidebar()">
                 <i class="bi bi-person-circle"></i>
                 <span class="">Users</span>
-                <i class="bi bi-caret-right-fill"></i>
+                <i class="bi bi-caret-right-fill" id="usersArrow"></i>
+            </li>
+            <ul class="collapse-list" id="usersCollapse">
+                <li>Users</li>
+                <li>Admins</li>
+            </ul>
+            <li class="fl-row">
+                dsafasd
             </li>
         </ul>
     </div>
