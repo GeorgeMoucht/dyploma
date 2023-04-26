@@ -12,7 +12,7 @@
                 <i class="bi bi-caret-right-fill" id="usersArrow"></i>
             </li>
             <ul class="collapse-list" id="usersCollapse">
-                <li>Users</li>
+                <li><a href="/users_management">Users</a></li>
                 <li>Admins</li>
             </ul>
             <li class="fl-row">

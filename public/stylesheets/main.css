@@ -85,6 +85,9 @@ html {
 .global-wrapper {
   padding: 1rem; }
 
+.show {
+  display: block !important; }
+
 .navigation {
   background-color: #FFFFFF;
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);
@@ -250,6 +253,42 @@ html {
 .edit-btn {
   float: right; }
 
+.admin-pannel-wrapper {
+  height: 94.4vh;
+  color: #050505; }
+  .admin-pannel-wrapper .sidebar-wrapper {
+    width: 10%;
+    background-color: #A657C9; }
+    .admin-pannel-wrapper .sidebar-wrapper .sidebar-list {
+      padding: 3px; }
+      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: none; }
+      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li {
+        text-align: center;
+        width: 100%;
+        padding: 4px;
+        list-style: none;
+        position: relative;
+        align-items: center; }
+        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li:hover {
+          cursor: pointer;
+          background-color: #bc63e2; }
+        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li .bi-person-circle {
+          padding-right: 1rem; }
+        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li .bi-caret-right-fill {
+          position: absolute;
+          right: 10px;
+          font-size: 14px;
+          transform: rotate(0deg); }
+      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list li {
+        text-align: left;
+        padding-left: 1rem; }
+        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list li:hover {
+          text-decoration: underline; }
+
 .profile-header .profile-image {
   border-radius: 50%; }
 .profile-header .name {
@@ -328,46 +367,8 @@ html {
         box-sizing: border-box;
         border: 1px solid black; }
 
-.admin-pannel-wrapper {
-  height: 94.4vh;
-  color: #050505; }
-  .admin-pannel-wrapper .sidebar-wrapper {
-    width: 10%;
-    background-color: #A657C9; }
-    .admin-pannel-wrapper .sidebar-wrapper .sidebar-list {
-      padding: 3px; }
-      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list {
-        width: 100%;
-        margin: 0px;
-        padding: 0px;
-        display: none; }
-      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li {
-        text-align: center;
-        width: 100%;
-        padding: 4px;
-        list-style: none;
-        position: relative;
-        align-items: center; }
-        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li:hover {
-          cursor: pointer;
-          background-color: #bc63e2; }
-        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li .bi-person-circle {
-          padding-right: 1rem; }
-        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li .bi-caret-right-fill {
-          position: absolute;
-          right: 10px;
-          font-size: 14px;
-          transform: rotate(0deg); }
-      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list li {
-        text-align: left;
-        padding-left: 1rem; }
-        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list li:hover {
-          text-decoration: underline; }
-  .admin-pannel-wrapper .main-wrapper {
-    width: 90%;
-    background-color: #EFEFF6; }
-
-.show {
-  display: block !important; }
+.admin-pannel-wrapper .main-wrapper {
+  width: 90%;
+  background-color: #EFEFF6; }
 
 /*# sourceMappingURL=main.css.map */

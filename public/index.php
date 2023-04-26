@@ -57,6 +57,9 @@ $app->router-> get('/courses', [AuthController::class, 'courses']);
 //Admin_panel Page
 $app->router->get('/admin_panel', [AdminController::class, 'admin_panel']);
 
+// Admin_panel users managing
+$app->router->get('/users_management', [AdminController::class, 'users_management']);
+
 
 // Start the application.
 $app->run();

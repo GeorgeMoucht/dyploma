@@ -22,12 +22,12 @@
 // 5. Components
 @import
     'components/navigation',
-    'components/buttons';
+    'components/buttons',
+    'components/admin_navigation';
 
 // 6. Page-specific styles
 @import
     'pages/profile',
     'pages/courses',
     'pages/admin-panel';
-
 // 7. Themes
