@@ -11,3 +11,32 @@
 .edit-btn {
     float: right;
 }
+
+.ad-btn-delete {
+    padding: $ad-btn-padding;
+    background-color: $btn-red;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $btn-red-hover;
+    }
+}
+
+.ad-btn-edit {
+    padding: $ad-btn-padding;
+    background-color: $logo-purple;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+
+
+    &:hover {
+        cursor: pointer;
+        background-color: $logo-purple-hover;
+    }
+}

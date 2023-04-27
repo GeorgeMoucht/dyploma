@@ -17,7 +17,8 @@
     'base/helpers';
 
 // 4. Layout sections
-
+@import 
+    'layout/admin_layout';
 
 // 5. Components
 @import
@@ -29,5 +30,6 @@
 @import
     'pages/profile',
     'pages/courses',
-    'pages/admin-panel';
+    'pages/admin-panel',
+    'pages/users_management';
 // 7. Themes
