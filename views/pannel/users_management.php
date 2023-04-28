@@ -26,9 +26,20 @@
     <div class="main-wrapper col">
         <h2>Users</h2>
         <div class="users-list-wrapper block">
-            asdf
+        <?php $table = \app\core\table\Table::begin() ?>
+                    <?php $table->row($users) ?>
+                <?php \app\core\table\Table::end() ?>
+            
             <table>
-                <?php  ?>
+                <?php 
+                    // foreach($users as $user):
+                    //     echo $user->id;
+                    //     echo "<pre>";
+                    //     echo $user->firstname;
+                    //     echo "<pre>";
+                    //     echo $user->lastname;
+                    // endforeach;
+                ?>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
