@@ -24,12 +24,25 @@
     <!-- End of Header -->
 
     <div class="main-content container fl-row">
-        <div class="col fl-col" style="border: 1px solid black;">
+        <div class="col profile-col-left fl-col">
             <div class="user-details col block">
-                User details
+                <h3>User details</h3>
+               
+                <button class="btn edit-btn">Edit profile</button>
+                
+                <h4>Email address</h4>
+                <span>
+                    <?php echo Application::$app->user->getDisplayEmail(); ?>
+                </span>
+
+                <h4>Country</h4>
+                <span>MyCountry</span>
+
+                <h4>Interests</h4>
+                <span>My interests</span>
             </div>
         </div>
-        <div class="col block" style="border: 1px solid black;">
+        <div class="col profile-col-right block">
             2
         </div>
     </div>

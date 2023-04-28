@@ -44,7 +44,7 @@ abstract class DbModel extends Model
     public static function findOne($where)
     {
         $tableName = static::tableName();
-
+        
         $attributes = array_keys($where);
 
         $sql = implode("AND", array_map(fn($attr) => "$attr = :$attr", $attributes));
@@ -61,16 +61,7 @@ abstract class DbModel extends Model
         return $statement->fetchObject(static::class);
     }
 
-    public function assignDefaultRole()
-    {
-        $tableName = static::tableName();
 
-        $statement = self::prepare("SELECT * FROM $tableName;");
-
-        $statement->execute();
-
-        return $statement->fetchObject(static::class);
-    }
 }
 
 ?>

@@ -43,6 +43,21 @@
                 </ul>
             </div>
         <?php else: ?>
+            <?php if(Application::isAdmin() == true): ?>
+                <!-- <div class="btn-admin-dashboard col ">
+                    <a href="" class="fl-row">
+                        <i class="bi bi-shield"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div> -->
+                <div class="admin-btn col fl-row">
+                    <a href="/admin_panel" class="fl-row">
+                        <i class="bi bi-shield"></i>
+                        <span>Dashboard</span>                            
+                    </a>
+                </div>
+                
+            <?php endif; ?>
             <div class="image-cnt my-courses-btn col fl-row" onclick="toggleMenu()">
                 <img class="profile-image" src="images/default-avatar.png" alt="Profile image">    
                 <span>My Courses</span>
