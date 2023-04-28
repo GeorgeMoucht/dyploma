@@ -98,7 +98,6 @@ class User extends UserModel
     {
         return $this->email;
     }
-
 }
 
 

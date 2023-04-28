@@ -28,6 +28,7 @@
         <div class="users-list-wrapper block">
             asdf
             <table>
+                <?php  ?>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>

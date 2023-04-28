@@ -4,7 +4,8 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\core\middlewares\AdminMiddleware;
-
+use app\models\AdminPannel;
+use app\models\User;
 
 /**
  * Class AdminController
@@ -32,6 +33,11 @@ class AdminController extends Controller
 
     public function users_management()
     {
+        $usersArray = User::findAll();
+        echo "<pre>";
+        var_dump($usersArray);
+        echo "</pre>";
+        exit;
         $this->setLayout('main');
         return $this->render('/pannel/users_management');
     }
