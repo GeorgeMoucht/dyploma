@@ -1,3 +1,5 @@
+<?php use \app\core\table\Table; ?>
+
 <div class="admin-pannel-wrapper container fl-row container">
     <div class="sidebar-wrapper col">
         <h4>Menu</h4>
@@ -26,10 +28,12 @@
     <div class="main-wrapper col">
         <h2>Users</h2>
         <div class="users-list-wrapper block">
-        <?php $table = \app\core\table\Table::begin() ?>
-                    <?php $table->row($users) ?>
-                <?php \app\core\table\Table::end() ?>
-            
+            <?php $table = new Table($users, $tableAttributes); ?>
+            <?php echo $table->generate(); ?>
+        </div>
+        <div class="users-list-wrapper block">
+
+    
             <table>
                 <?php 
                     // foreach($users as $user):
@@ -41,45 +45,45 @@
                     // endforeach;
                 ?>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Create Date</th>
-                    <th>Actions</th>
+                    <th>ID</td>
+                    <th>Name</td>
+                    <th>Email</td>
+                    <th>Create Date</td>
+                    <th>Actions</td>
                 </tr>
 
 
                 <tr>
-                    <th>Exmp id</th>
-                    <th>Ex.Name</th>
-                    <th>ex.Email</th>
-                    <th>ex.Create date</th>
-                    <th>
+                    <td>Exmp id</td>
+                    <td>Ex.Name</td>
+                    <td>ex.Email</td>
+                    <td>ex.Create date</td>
+                    <td>
                         <button class="ad-btn-edit">Edit</button>
                         <button class="ad-btn-delete">Delete</button>
-                    </th>
+                    </td>
                 </tr>
                                 
                 <tr>
-                    <th>Exmp id</th>
-                    <th>Ex.Name</th>
-                    <th>ex.Email</th>
-                    <th>ex.Create date</th>
-                    <th>
+                    <td>Exmp id</td>
+                    <td>Ex.Name</td>
+                    <td>ex.Email</td>
+                    <td>ex.Create date</td>
+                    <td>
                         <button class="ad-btn-edit">Edit</button>
                         <button class="ad-btn-delete">Delete</button>
-                    </th>
+                    </td>
                 </tr>
                                 
                 <tr>
-                    <th>Exmp id</th>
-                    <th>Ex.Name</th>
-                    <th>ex.Email</th>
-                    <th>ex.Create date</th>
-                    <th>
+                    <td>Exmp id</td>
+                    <td>Ex.Name</td>
+                    <td>ex.Email</td>
+                    <td>ex.Create date</td>
+                    <td>
                         <button class="ad-btn-edit">Edit</button>
                         <button class="ad-btn-delete">Delete</button>
-                    </th>
+                    </td>
                 </tr>
             </table>
         </div>

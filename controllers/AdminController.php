@@ -34,12 +34,22 @@ class AdminController extends Controller
     public function users_management()
     {
         $usersArray = User::findAll();
+        $params = [
+            'users' => $usersArray,
+            'tableAttributes' => [
+                'ID',
+                'Name',
+                'Email',
+                'Created Date',
+                'Actions'
+            ]
+        ];
         // echo "<pre>";
         // var_dump($usersArray);
         // echo "</pre>";
         // exit;
         $this->setLayout('main');
-        return $this->render('/pannel/users_management', ['users' => $usersArray]);
+        return $this->render('/pannel/users_management', $params);
     }
 
 }

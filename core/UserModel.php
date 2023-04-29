@@ -20,7 +20,7 @@ abstract class UserModel extends DbModel
         $tableName = static::tableName();
         // $attributes = array_keys($where);
 
-        $statement = self::prepare("SELECT id, firstname, lastname, created_at FROM $tableName");
+        $statement = self::prepare("SELECT id, firstname, email, created_at FROM $tableName");
 
         $statement->execute();
         return $statement->fetchAll(\PDO::FETCH_OBJ);
