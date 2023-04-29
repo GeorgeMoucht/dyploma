@@ -27,23 +27,39 @@
     </div>
     <div class="main-wrapper col">
         <h2>Users</h2>
-        <div class="users-list-wrapper block">
-            <?php $table = new Table($users, $tableAttributes); ?>
-            <?php echo $table->generate(); ?>
+        <div class="users-list-wrapper">
+            <div class="column">
+                <?php $table = new Table($users, $tableAttributes); ?>
+                <?php echo $table->generate(); ?>
+            </div>
+            <div class="column">
+                <table>
+                    <tr>
+                        <th>Actions</th>
+                    </tr>
+                    <?php
+                        $usersCount = count($users);
+                        if(count($users) != 0) {
+                            foreach($users as $value) {
+                                echo '
+                                    <tr>
+                                        <td>
+                                            <button class="ad-btn-edit">Edit</button>
+                                            <button class="ad-btn-delete">Delete</button>
+                                        </td>
+                                    </tr>
+                                ';
+                            }
+                        }
+                    ?>
+                </table>
+            </div>
+ 
         </div>
-        <div class="users-list-wrapper block">
+        <!-- <div class="users-list-wrapper block">
 
     
             <table>
-                <?php 
-                    // foreach($users as $user):
-                    //     echo $user->id;
-                    //     echo "<pre>";
-                    //     echo $user->firstname;
-                    //     echo "<pre>";
-                    //     echo $user->lastname;
-                    // endforeach;
-                ?>
                 <tr>
                     <th>ID</td>
                     <th>Name</td>
@@ -86,6 +102,6 @@
                     </td>
                 </tr>
             </table>
-        </div>
+        </div> -->
     </div>
 </div>

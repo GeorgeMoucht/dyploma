@@ -50,8 +50,7 @@ html {
 
 .header-title {
   font-size: 30px;
-  font-weight: normal;
-}
+  font-weight: normal; }
 
 /**
     * Basic container that wrap all components
@@ -101,9 +100,8 @@ html {
 
 .navigation {
   background-color: #FFFFFF;
-  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25); }
+  -webkit-box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.1); }
   .navigation .logo {
     width: 10%;
     /**
@@ -407,13 +405,17 @@ html {
 .users-list-wrapper {
   width: 100%;
   border-radius: 12px; }
+  .users-list-wrapper .column {
+    float: left;
+    width: 50%; }
   .users-list-wrapper table {
     border-collapse: collapse;
     width: 100%; }
     .users-list-wrapper table td, .users-list-wrapper table th {
       border: 1px solid #dddddd;
       text-align: left;
-      padding: 8px; }
+      padding: 8px;
+      height: 50px; }
     .users-list-wrapper table tr:nth-child(even) {
       background-color: #dddddd; }
 

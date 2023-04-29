@@ -44,15 +44,11 @@ class Table
             }
             $html .= '</tr>';
         }
-        // foreach($this->data as $value) {
-        // {
-        //     $html .= '<tr>';
-        //     $html .= '<th>' . htmlspecialchars($value) . '</th>';
-        //     $html .= '</tr>';
-        // }
         $html .= '</table>';
         return $html;
     }
+
+
     // public static function begin()
     // {
     //     echo '<table>';

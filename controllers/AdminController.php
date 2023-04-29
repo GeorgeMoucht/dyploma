@@ -41,8 +41,7 @@ class AdminController extends Controller
                 'Name',
                 'Email',
                 'Created Date',
-                'Actions'
-            ]
+            ],
         ];
         // echo "<pre>";
         // var_dump($usersArray);
