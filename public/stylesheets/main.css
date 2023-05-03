@@ -1,0 +1,422 @@
+/**
+    * Set up a decent box model on the root element
+*/
+html {
+  box-sizing: border-box; }
+
+/**
+    * Make all elements from the DOM inherit from
+    * the parent box-sizing.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+/**
+    * Basic styles for links.
+    * Make primary color the $primary-text-dark
+    * variable and set the text-decoration to none.
+*/
+a {
+  text-decoration: none;
+  color: #050505; }
+  a:active {
+    color: #050505; }
+  a:visited {
+    color: #050505; }
+
+/**
+    * Remove unnecessary margin and padding
+    * from the body element.
+*/
+body {
+  margin: 0px;
+  padding: 0px; }
+
+.bookmark-section {
+  list-style-type: none; }
+  .bookmark-section li {
+    margin: 0 10px;
+    /* adjust as needed */ }
+    .bookmark-section li a:hover {
+      text-decoration: underline; }
+
+html {
+  font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #050505; }
+
+.header-title {
+  font-size: 30px;
+  font-weight: normal; }
+
+/**
+    * Basic container that wrap all components
+*/
+.container {
+  width: 100%; }
+
+/**
+    * Make the element display: flex.
+    * Note: it needs the container rule also to work.
+*/
+.fl-col {
+  display: flex;
+  flex-direction: column; }
+
+.fl-row {
+  display: flex;
+  flex-direction: row; }
+
+.col {
+  flex-grow: 1; }
+
+.image-cnt {
+  max-width: 100%;
+  height: auto; }
+
+/**
+    * Put border for every element that we want to display with a border
+    * good example is the layout of profile page.
+*/
+.block {
+  border: 1px solid #E5E5E5;
+  padding: 1rem;
+  margin-bottom: 1rem; }
+
+.global-wrapper {
+  padding: 1rem; }
+
+.show {
+  display: block !important; }
+
+.admin-pannel-wrapper .main-wrapper {
+  width: 90%;
+  background-color: #EFEFF6;
+  padding: 3rem;
+  color: #3C4043; }
+
+.navigation {
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.1); }
+  .navigation .logo {
+    width: 10%;
+    /**
+        * Adjust logo width to fit the parent
+        * container
+    */ }
+    .navigation .logo img {
+      width: 100%; }
+  .navigation .menu {
+    width: 85%; }
+    .navigation .menu .menu-list {
+      overflow: hidden;
+      white-space: nowrap;
+      height: 100%;
+      margin: 0px;
+      align-items: center; }
+      .navigation .menu .menu-list li {
+        padding: 13px;
+        display: inline-block;
+        cursor: pointer; }
+        .navigation .menu .menu-list li:hover {
+          background-color: #c8c8c872; }
+        .navigation .menu .menu-list li:active {
+          background-color: #c8c8c8b9; }
+  .navigation .my-courses-btn {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /**
+        * Make the text underline on hover.
+    */
+    /**
+        * Give to all child elements
+        * margin of 2px.
+    */ }
+    .navigation .my-courses-btn:hover {
+      background-color: #c8c8c872; }
+    .navigation .my-courses-btn:active {
+      background-color: #c8c8c8b9; }
+    .navigation .my-courses-btn:hover {
+      text-decoration: underline; }
+    .navigation .my-courses-btn span {
+      white-space: nowrap; }
+    .navigation .my-courses-btn > * {
+      margin: 2px; }
+    .navigation .my-courses-btn .profile-image {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px; }
+  .navigation .notifications {
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer; }
+    .navigation .notifications:hover {
+      background-color: #c8c8c872; }
+    .navigation .notifications:active {
+      background-color: #c8c8c8b9; }
+    .navigation .notifications i {
+      fill: black;
+      font-size: 20px; }
+  .navigation .right-menu {
+    float: right; }
+  .navigation .btn-admin-dashboard {
+    align-items: center;
+    padding: 1rem; }
+    .navigation .btn-admin-dashboard:hover {
+      background-color: #c8c8c872; }
+    .navigation .btn-admin-dashboard:active {
+      background-color: #c8c8c8b9; }
+    .navigation .btn-admin-dashboard a {
+      align-items: center; }
+      .navigation .btn-admin-dashboard a:hover span {
+        text-decoration: underline; }
+    .navigation .btn-admin-dashboard i {
+      fill: white;
+      font-size: 21px;
+      margin-right: .2rem; }
+  .navigation .admin-btn {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /**
+        * Make the text underline on hover.
+    */
+    /**
+        * Give to all child elements
+        * margin of 2px.
+    */ }
+    .navigation .admin-btn:hover {
+      background-color: #c8c8c872; }
+    .navigation .admin-btn:active {
+      background-color: #c8c8c8b9; }
+    .navigation .admin-btn i {
+      margin-right: .2rem;
+      font-size: 18px; }
+    .navigation .admin-btn:hover {
+      text-decoration: underline; }
+    .navigation .admin-btn span {
+      white-space: nowrap; }
+    .navigation .admin-btn > * {
+      margin: 2px; }
+
+.navigation-collapse {
+  width: 100%;
+  height: 100vh;
+  max-height: 0px;
+  overflow: hidden;
+  background-color: #EEEEEE;
+  position: absolute;
+  top: 0;
+  z-index: 30;
+  transition: max-height 0.5s;
+  color: #FFFFFF; }
+  .navigation-collapse .nav-coll-header {
+    background-color: #A657C9;
+    padding: 1.5rem; }
+    .navigation-collapse .nav-coll-header .profile-image {
+      width: 3%;
+      justify-content: center; }
+      .navigation-collapse .nav-coll-header .profile-image img {
+        width: 90px;
+        border-radius: 50%; }
+    .navigation-collapse .nav-coll-header .nav-coll-menu {
+      width: 90%;
+      padding: 1rem; }
+      .navigation-collapse .nav-coll-header .nav-coll-menu .full-name {
+        margin: 0px; }
+      .navigation-collapse .nav-coll-header .nav-coll-menu .menu-list {
+        margin-top: .5rem; }
+        .navigation-collapse .nav-coll-header .nav-coll-menu .menu-list a {
+          color: #FFFFFF; }
+          .navigation-collapse .nav-coll-header .nav-coll-menu .menu-list a:hover {
+            text-decoration: underline; }
+  .navigation-collapse .close-coll-navigation .close-cnt {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; }
+  .navigation-collapse .close-coll-navigation i {
+    font-size: 25px; }
+
+/**
+    * Used to open dropdown profile menu on navigation bar.
+*/
+.show-navigation {
+  max-height: 100vh; }
+
+.btn {
+  padding: 0.3rem;
+  background: transparent;
+  border-radius: 6px;
+  border-color: #A657C9;
+  color: #A657C9;
+  cursor: pointer; }
+
+.edit-btn {
+  float: right; }
+
+.ad-btn-delete {
+  padding: 0.5rem;
+  background-color: #AE291C;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold; }
+  .ad-btn-delete:hover {
+    cursor: pointer;
+    background-color: #8b1f16; }
+
+.ad-btn-edit {
+  padding: 0.5rem;
+  background-color: #A657C9;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold; }
+  .ad-btn-edit:hover {
+    cursor: pointer;
+    background-color: #8746a4; }
+
+.admin-pannel-wrapper {
+  height: 94.4vh;
+  color: #050505; }
+  .admin-pannel-wrapper .sidebar-wrapper {
+    width: 10%;
+    background-color: #A657C9; }
+    .admin-pannel-wrapper .sidebar-wrapper .sidebar-list {
+      padding: 3px; }
+      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: none; }
+      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li {
+        text-align: center;
+        width: 100%;
+        padding: 4px;
+        list-style: none;
+        position: relative;
+        align-items: center; }
+        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li:hover {
+          cursor: pointer;
+          background-color: #bc63e2; }
+        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li .bi-person-circle, .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li .bi-shield {
+          padding-right: 1rem; }
+        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list li .bi-caret-right-fill {
+          position: absolute;
+          right: 10px;
+          font-size: 14px;
+          transform: rotate(0deg); }
+      .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list li {
+        text-align: left;
+        padding-left: 1rem; }
+        .admin-pannel-wrapper .sidebar-wrapper .sidebar-list .collapse-list li:hover {
+          text-decoration: underline; }
+
+.profile-header .profile-image {
+  border-radius: 50%; }
+.profile-header .name {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 1rem; }
+
+.main-content .profile-col-left {
+  margin-right: .5rem; }
+.main-content .profile-col-right {
+  margin-left: .5rem; }
+.main-content .user-details h3 {
+  margin-top: 0px;
+  font-weight: normal; }
+.main-content .user-details h4 {
+  margin-top: 0px;
+  margin-bottom: .5rem; }
+.main-content .user-details span {
+  margin-bottom: 1rem;
+  display: inline-block; }
+
+.header-wrapper {
+  padding: 3rem;
+  padding-left: 13rem;
+  justify-content: center; }
+  .header-wrapper h3 {
+    font-size: 30px;
+    font-weight: 500; }
+  .header-wrapper p {
+    font-size: 18px;
+    max-width: 50%;
+    margin-top: 0px; }
+
+.courses-glob-wrapper {
+  background-color: #F7F7F7; }
+  .courses-glob-wrapper .search-wrapper {
+    border: 1px solid black;
+    width: 30%; }
+    .courses-glob-wrapper .search-wrapper h2 {
+      font-size: 20px;
+      width: 100%;
+      display: inline-block;
+      font-weight: normal; }
+    .courses-glob-wrapper .search-wrapper .checkbox-wrapper {
+      width: 100%;
+      display: inline-block; }
+      .courses-glob-wrapper .search-wrapper .checkbox-wrapper input[type="checkbox"] {
+        width: 25px;
+        height: 25px; }
+      .courses-glob-wrapper .search-wrapper .checkbox-wrapper label {
+        font-size: 18px;
+        position: relative;
+        bottom: 5px;
+        margin-left: 1rem; }
+    .courses-glob-wrapper .search-wrapper .sub-menu {
+      border: 1px solid red;
+      width: auto;
+      margin-left: 37%; }
+  .courses-glob-wrapper .display-courses-wrapper {
+    background-color: orange;
+    width: 70%;
+    align-items: center; }
+    .courses-glob-wrapper .display-courses-wrapper h2 {
+      font-size: 20px;
+      width: 100%;
+      display: inline-block;
+      font-weight: normal;
+      padding-left: 2rem; }
+    .courses-glob-wrapper .display-courses-wrapper .courses-list {
+      width: 90%;
+      background-color: yellow;
+      flex-wrap: wrap; }
+      .courses-glob-wrapper .display-courses-wrapper .courses-list .course-card {
+        flex-basis: calc(100% / 3);
+        max-width: calc(100% / 3);
+        box-sizing: border-box;
+        border: 1px solid black; }
+
+.admin-pannel-wrapper .main-wrapper {
+  width: 90%;
+  background-color: #EFEFF6; }
+
+.users-list-wrapper {
+  width: 100%;
+  border-radius: 12px; }
+  .users-list-wrapper .column {
+    float: left;
+    width: 50%; }
+  .users-list-wrapper table {
+    border-collapse: collapse;
+    width: 100%; }
+    .users-list-wrapper table td, .users-list-wrapper table th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      height: 50px; }
+    .users-list-wrapper table tr:nth-child(even) {
+      background-color: #dddddd; }
+
+/*# sourceMappingURL=main.css.map */

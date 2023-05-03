@@ -16,6 +16,11 @@ use app\core\UserModel;
 
 class User extends UserModel
 {
+
+    const ROLE_USER = 'user';
+    const ROLE_ADMIN = 'admin';
+    const ROLE_TEACHER = 'teacher';
+
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
     const STATUS_DELETED = 2;
@@ -26,6 +31,7 @@ class User extends UserModel
     public int $status = self::STATUS_INACTIVE;
     public string $password = '';
     public string $confirmPassword = '';
+    public string $role = '';
 
 
     public static function tableName(): string
@@ -53,6 +59,13 @@ class User extends UserModel
     // attribute before the push to db.
     public function save()
     {
+        if(!self::assignDefaultRole()) {    // The first register user is created as Admin.
+            // echo "table is null";
+            $this->role = self::ROLE_ADMIN;
+        } else {
+            // echo "users exists";
+            $this->role = self::ROLE_USER;
+        }
         $this->status = self::STATUS_INACTIVE;
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         return parent::save();
@@ -73,7 +86,7 @@ class User extends UserModel
     }
 
     public function attributes(): array {
-        return ['firstname', 'lastname', 'email', 'password', 'status'];
+        return ['firstname', 'lastname', 'email', 'password', 'role', 'status'];
     }
 
     public function getDisplayName(): string
@@ -81,6 +94,10 @@ class User extends UserModel
         return $this->firstname . ' ' . $this->lastname;
     }
 
+    public function getDisplayEmail(): string
+    {
+        return $this->email;
+    }
 }
 
 

@@ -1,0 +1,218 @@
+.navigation {
+    background-color: $white;
+    // box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.25);
+    // -webkit-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.25);
+    // -moz-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.25);
+    @include bottom-shadow;
+
+    .logo {
+        width: 10%;
+
+        /**
+            * Adjust logo width to fit the parent
+            * container
+        */
+        img {
+            width: 100%;
+        }
+    }
+
+    .menu {
+        width: 85%;
+
+        .menu-list {
+            overflow: hidden;
+            white-space: nowrap;
+            height: 100%;
+            margin: 0px;
+            align-items: center;
+            
+            li {
+                padding: 13px;
+                display: inline-block;
+                cursor: pointer;
+                @include menu-hover;
+            }
+        }
+    }
+
+    .my-courses-btn {
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        @include menu-hover;
+
+        /**
+            * Make the text underline on hover.
+        */
+        &:hover {
+            text-decoration: underline;
+        }
+
+        span {
+            white-space: nowrap;
+        }
+        /**
+            * Give to all child elements
+            * margin of 2px.
+        */
+        > * {
+            margin: 2px;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .notifications {
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        cursor: pointer;
+        @include menu-hover;
+
+        i {
+            fill: black;
+            font-size: 20px;
+        }
+
+    }
+
+    .right-menu {
+        float: right;
+    }
+
+    .btn-admin-dashboard {
+        align-items: center;
+        // justify-content: center;
+        padding: 1rem;
+        @include menu-hover;
+
+        a {
+            align-items:  center;
+
+            &:hover {
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+       
+        i{
+            fill: white;
+            font-size: 21px;
+            margin-right: .2rem;
+        }
+
+    }
+
+    .admin-btn {
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        @include menu-hover;
+
+        i {
+            margin-right: .2rem;
+            font-size: 18px;
+        }
+
+        /**
+            * Make the text underline on hover.
+        */
+        &:hover {
+            text-decoration: underline;
+        }
+
+        span {
+            white-space: nowrap;
+        }
+        /**
+            * Give to all child elements
+            * margin of 2px.
+        */
+        > * {
+            margin: 2px;
+        }
+    
+    }
+
+
+
+}
+
+.navigation-collapse {
+    width: 100%;
+    height: 100vh;
+    max-height: 0px;
+    overflow: hidden;
+    background-color: $primary-white-background;
+    position: absolute;
+    top: 0;
+    z-index: 30;
+    transition: max-height 0.5s;
+    color: $white;
+
+    .nav-coll-header {
+        background-color: $logo-purple;
+        padding: 1.5rem;
+
+        .profile-image {
+            width: 3%;
+            justify-content: center;
+
+            img {
+                width: 90px;
+                border-radius: 50%;
+            }
+        }
+
+        .nav-coll-menu {
+            width: 90%;
+            padding: 1rem;
+
+            .full-name {
+                margin: 0px;
+            }
+
+            .menu-list {
+                margin-top: .5rem;
+
+                a {
+                    color: $white;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .close-coll-navigation {
+
+        .close-cnt {
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        i {
+            font-size: 25px;
+        }
+    }
+    
+}
+
+
+/**
+    * Used to open dropdown profile menu on navigation bar.
+*/
+.show-navigation {
+    max-height: 100vh;
+}

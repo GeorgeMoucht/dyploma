@@ -1,0 +1,59 @@
+/**
+    * Set up a decent box model on the root element
+*/
+html {
+    box-sizing: border-box;
+}
+
+/**
+    * Make all elements from the DOM inherit from
+    * the parent box-sizing.
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/**
+    * Basic styles for links.
+    * Make primary color the $primary-text-dark
+    * variable and set the text-decoration to none.
+*/
+a {
+    text-decoration: none;
+    color: $primary-text-dark;
+
+    &:active {
+        color: $primary-text-dark;
+    }
+
+    &:visited {
+        color: $primary-text-dark;
+    }
+}
+
+/**
+    * Remove unnecessary margin and padding
+    * from the body element.
+*/
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.bookmark-section {
+    list-style-type: none;
+
+    li {
+        margin: 0 10px; /* adjust as needed */
+
+        a {
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 use app\core\Application;
 use app\controllers\SiteController;
 use app\controllers\AuthController;
+use app\controllers\AdminController;
 
 // Echo errors messages.
 ini_set('display_errors', 1); error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);    
@@ -44,9 +45,20 @@ $app->router->post('/login', [AuthController::class,'login']);
 $app->router->get('/register', [AuthController::class,'register']);
 $app->router->post('/register', [AuthController::class,'register']);
 
+//Logout Page
 $app->router->get('/logout', [AuthController::class,'logout']);
 
-$app->router->get('/profile', [ AuthController::class,'profile']);
+//Profile Page
+$app->router->get('/profile', [AuthController::class,'profile']);
+
+//Courses Page
+$app->router-> get('/courses', [AuthController::class, 'courses']);
+
+//Admin_panel Page
+$app->router->get('/admin_panel', [AdminController::class, 'admin_panel']);
+
+// Admin_panel users managing
+$app->router->get('/users_management', [AdminController::class, 'users_management']);
 
 
 // Start the application.

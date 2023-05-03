@@ -62,7 +62,7 @@ Class Application
         try{
             echo $this->router->resolve();
         }catch(\Exception $e) {
-            $this->response->setStatusCode($e->getCode());
+            // $this->response->setStatusCode($e->getCode());
             echo $this->router->renderView('_error',[
                 'exception' => $e
             ]);
@@ -97,6 +97,17 @@ Class Application
     public static function isGuest()
     {
         return !self::$app->user;
+    }
+
+    public static function isAdmin()
+    {
+        if(self::$app->user) {
+            if(self::$app->user->role == 'admin') {
+                return true;
+            }
+        }
+        
+        return false;
     }
 }
 

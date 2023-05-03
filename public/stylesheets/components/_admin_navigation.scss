@@ -1,0 +1,57 @@
+.admin-pannel-wrapper {
+    height: 94.4vh;
+    color: $primary-text-dark;
+
+    .sidebar-wrapper {
+        width: 10%;
+        background-color: $logo-purple;
+
+        .sidebar-list {
+            padding: 3px;
+
+            .collapse-list {
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                display: none;
+            }
+
+            li {
+                text-align: center;
+                width: 100%;
+                padding: 4px;
+                list-style: none;
+                position: relative;
+                align-items: center;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #bc63e2;
+                }
+
+                .bi-person-circle , .bi-shield {
+                    padding-right: 1rem;
+                }
+
+                .bi-caret-right-fill {
+                    position: absolute;
+                    right: 10px;
+                    font-size: 14px;
+                    transform: rotate(0deg);
+                }
+            }
+
+            .collapse-list {
+
+                li {
+                    text-align: left;
+                    padding-left: 1rem;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

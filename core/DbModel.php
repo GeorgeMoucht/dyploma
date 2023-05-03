@@ -2,6 +2,7 @@
 
 namespace app\core;
 
+use app\core\Model;
 
 /**
  * Class DbModel
@@ -43,7 +44,7 @@ abstract class DbModel extends Model
     public static function findOne($where)
     {
         $tableName = static::tableName();
-
+        
         $attributes = array_keys($where);
 
         $sql = implode("AND", array_map(fn($attr) => "$attr = :$attr", $attributes));
@@ -59,6 +60,7 @@ abstract class DbModel extends Model
         // Return the instance of the user class.
         return $statement->fetchObject(static::class);
     }
+
 
 }
 

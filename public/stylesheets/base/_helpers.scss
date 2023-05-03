@@ -1,0 +1,48 @@
+/**
+    * Basic container that wrap all components
+*/
+
+.container {
+    width: $max-width;
+}
+
+/**
+    * Make the element display: flex.
+    * Note: it needs the container rule also to work.
+*/
+.fl-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.fl-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    flex-grow: 1;
+}
+
+.image-cnt {
+    max-width: 100%;
+    height: auto;
+}
+
+/**
+    * Put border for every element that we want to display with a border
+    * good example is the layout of profile page.
+*/
+.block {
+    border: 1px solid $border-color;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.global-wrapper {
+    padding: 1rem;
+}
+
+.show {
+    display: block !important;
+}

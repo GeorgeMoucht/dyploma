@@ -35,6 +35,12 @@ class SiteController extends Controller
         return $this->render('contact');
     }
 
+    // Render courses view
+    public function courses()
+    {
+        return $this->render('courses');
+    }
+
     // Manipulation of post/get date from contact view.
     public function handleContact(Request $request)
     {

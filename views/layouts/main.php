@@ -2,70 +2,116 @@
     use app\core\Application;
 
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap demo</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item active me-auto">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                </ul>
-
-                    <?php if(Application::isGuest()): ?>
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/login">Login</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/register">Register</a>
-                            </li>
-                        </ul>
-                    <?php else: ?>
-                        <ul class="navbar-nav ms-auto">
-                        <li class="nav-item active">
-                                <a class="nav-link" href="/profile">Profile</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/logout">Welcome <?php echo Application::$app->user->getDisplayName(); ?>
-                                    (Logout)
-                                </a>
-                            </li>
-                        </ul>
-                    <?php endif; ?>
-
-            </div>
-        </nav>
-
-        <div class="container">
-            <?php if (Application::$app->session->getFlash('success')):  ?>
-            <div class="alert alert-success" role="alert">
-                <?php echo Application::$app->session->getFlash('success'); ?>
-            </div>
-            <?php endif; ?>
-            {{content}}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+</head>
+<body>
+    <div class="navigation container fl-row">
+        <div class="logo col">
+            <img src="images/edu-logo.png" alt="">
+        </div>
+        <div class="menu col">
+            <ul class="menu-list fl-row">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/courses">Courses</a>
+                </li>
+                <li>
+                    <a href="/forum">Forum</a>
+                </li>
+            </ul>
         </div>
 
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+        <?php if(Application::isGuest()): ?>
+            <div class="menu col">
+                <ul class="menu-list fl-row right-menu">
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                    <li>
+                        <a href="/register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        <?php else: ?>
+            <?php if(Application::isAdmin() == true): ?>
+                <!-- <div class="btn-admin-dashboard col ">
+                    <a href="" class="fl-row">
+                        <i class="bi bi-shield"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div> -->
+                <div class="admin-btn col fl-row">
+                    <a href="/admin_panel" class="fl-row">
+                        <i class="bi bi-shield"></i>
+                        <span>Dashboard</span>                            
+                    </a>
+                </div>
+                
+            <?php endif; ?>
+            <div class="image-cnt my-courses-btn col fl-row" onclick="toggleMenu()">
+                <img class="profile-image" src="images/default-avatar.png" alt="Profile image">    
+                <span>My Courses</span>
+            </div>
 
-    </body>
+            <div class="notifications col fl-col">
+                <i class="bi bi-bell"></i>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <div class="navigation-collapse container" id="dropDownMenu" >
+        <div class="nav-coll-header container fl-row">
+            <div class="profile-image col fl-row">
+                <img class="profile-image" src="images/default-avatar.png" alt="Profile image">    
+            </div>
+            <div class="nav-coll-menu col fl-col">
+                <h2 class="col full-name">
+                    <?php echo Application::$app->user->getDisplayName(); ?>
+                </h2>
+                <div class="col menu-list">
+                    <a href="/profile">Profile</a>
+                    <span>-</span>
+                    <a href="">Dashboard</a>
+                    <span>-</span>
+                    <a href="">Grades</a>
+                    <span>-</span>
+                    <a href="">Preferences</a>
+                    <span>-</span>
+                    <a href="/logout">Log out</a>
+                </div>
+            </div>
+            <div class="close-coll-navigation col">
+                <div class="close-cnt fl-col" onclick="closeToggleMenu()">
+                    <i class="bi bi-x-lg"></i>
+                    Close
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <?php if (Application::$app->session->getFlash('success')):  ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo Application::$app->session->getFlash('success'); ?>
+        </div>
+    <?php endif; ?>
+    {{content}}
+
+
+    
+    <script src="js/main.js"></script>
+</body>
 </html>

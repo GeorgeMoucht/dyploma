@@ -1,3 +1,1 @@
-<h1>home</h1>
-
-<h3><?php echo $name ?></h3>
+<h3 style="margin: 0px;"><?php echo $name ?></h3>
