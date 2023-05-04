@@ -33,13 +33,14 @@ class AdminController extends Controller
 
     public function users_management()
     {
-        $usersArray = User::findAll();
+        $usersArray = User::findAll(['id','email','firstname','lastname','created_at']);
         $params = [
             'users' => $usersArray,
             'tableAttributes' => [
                 'ID',
                 'Name',
                 'Email',
+                'Last Name',
                 'Created Date',
             ],
         ];
