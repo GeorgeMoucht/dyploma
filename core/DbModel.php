@@ -61,6 +61,17 @@ abstract class DbModel extends Model
         return $statement->fetchObject(static::class);
     }
 
+    public static function findAll($columns = ['*'])
+    {
+        $tableName = static::tableName();
+        $selectedColumns = implode(', ', $columns);
+        $query = "SELECT $selectedColumns FROM $tableName";
+        $statement = self::prepare($query);
+        $statement->execute();
+
+        return $statement->fetchAll(\PDO::FETCH_OBJ);
+    }
+
 
 }
 
